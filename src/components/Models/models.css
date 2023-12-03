@@ -1,0 +1,86 @@
+.proof-container{
+    border-left: 1px solid #2BAE66;
+    max-height: 1280px;
+    margin: 15px 25px;
+    padding: 10px 20px;
+    position: relative;
+    min-height: 20px;
+
+    transition: 0.3s all;
+}
+
+.public-inputs{
+    display: flex;
+    align-items: center;
+}
+
+.pub-input-title{
+    padding: 10px 15px;
+}
+
+.pub-input{
+    width: 25%;
+    padding: 10px 20px;
+    margin: 0px 20px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #2BAE66;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: 0.2s all;
+}
+
+.pub-input:focus, .pub-input:hover{
+    box-shadow: 0px 10px 15px -10px #2BAE66;
+    outline: none;
+    transition: 0.2s all;
+}
+
+.prediction-container{
+    padding: 30px 20px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f3f3f3;
+    margin-top: -20px;
+}
+
+.proof-btn{
+    margin: 50px 20px;
+    padding: 10px 30px;
+    font-size: 1.4rem;
+    background-color: #2BAE66;
+    color: white;
+    transition: 0.3s all;
+}
+
+.proof-btn:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.3s all;
+}
+
+.proof-btn:focus{
+    outline: none;
+}
+
+.proof-md-wrapper{
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 80px;
+}
+
+
+.vf-container{
+    border-left: 1px solid #2BAE66;
+    min-height: 30px;
+    padding: 10px 30px;
+    margin: 15px 25px;
+}
+
+.congrats-msg{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0px 25px;
+}
