@@ -10,7 +10,6 @@
 
 .md-card:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.10);
     transition: 0.3s all;
 }
 
@@ -26,3 +25,26 @@
     font-weight: 300;
 }
 
+.purple{
+    border-bottom: 2px solid #f8c93c;
+}
+
+.green{
+    border-bottom: 2px solid #2BAE66;
+}
+
+.pink{
+    border-bottom: 2px solid #eb2c5d;
+}
+
+.purple:hover{
+    box-shadow: 0px 0px 10px 1px  #f8c93c;
+}
+
+.green:hover{
+    box-shadow: 0px 0px 10px 0px #2BAE66;
+}
+
+.pink:hover{
+    box-shadow: 0px 0px 10px 0px #eb2c5d;
+}

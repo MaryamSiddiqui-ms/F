@@ -8,11 +8,17 @@ const MdCardHolder = ({ docs }) => {
         setDocuemnts(docs);
     }, [])
 
+    const colors = [
+        "purple",
+        "green",
+        "pink"
+    ]
+
     return (
         <div className="card-holder">
             {
                 documents.map((document, index) =>{
-                    return <MdCard key={index} doc={document} />
+                    return <MdCard key={index} doc={document} color={colors[index]} />
                 })
             }
         </div>
