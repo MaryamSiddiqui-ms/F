@@ -1,0 +1,5 @@
+.md-container{
+    width: calc(100% - 300px);
+    margin-left: auto;
+    padding: 50px 0px;
+}

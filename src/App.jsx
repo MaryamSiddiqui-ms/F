@@ -1,37 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+
+import { Home, 
+  Documentation, 
+  GettingStarted,
+  ZkDist,
+  ZkSort,
+  ZkMaxLabel,
+  Examples 
+} from "./pages";
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { Sidebar } from "./components";
+import links from "./statics/links";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/documentation",
+    element: <Documentation />
+  },
+  {
+    path: "/documentation/zkDist",
+    element: <ZkDist />
+  },
+  {
+    path: "/documentation/ZkSort",
+    element: <ZkSort />
+  },
+  {
+    path: "/documentation/ZkMaxLabel",
+    element: <ZkMaxLabel />
+  },
+  {
+    path: "/getting-started",
+    element: <GettingStarted />
+  },
+  {
+    path: "/examples",
+    element: <Examples />
+  },
+  {
+    path: "*",
+    element: <Home />
+  }
+
+]);
+
 
 function App() {
-
   return (
     <>
-      
-      <h1>zkVML</h1>
-      <h2>
-      Zero-Knowledge Validating Machine Learning Model
-      </h2>
-      <div className="card">
-      <button>
-          Input data 
-        </button>
-        <button>
-          Generate Proof
-        </button>
-        <button>
-          Verify
-        </button>
-      
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-       Click on logo to view the documentation
-      </p>
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

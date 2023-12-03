@@ -1,0 +1,30 @@
+.links-container{
+    height: 50%;
+    padding: 20px 30px;
+}
+
+.link-wrapper{
+    background-color: #444444;
+    padding: 10px 30px;
+    margin: 15px 0px;
+    border-radius: 7px;
+    text-align: start;
+    transition: 0.2s all;
+    font-weight: 800;
+    color: white;
+    display: block;
+}
+
+.link-wrapper:hover{
+    background-color: #f3f3f3;
+    transition: 0.2s all;
+    cursor: pointer;
+    color: black;
+}
+
+.active{
+    background-color: #f3f3f3;
+    color: black;
+    border-radius: 7px;
+
+}

@@ -1,0 +1,11 @@
+#header{
+    width: calc(100% - 300px);
+    margin-left: auto;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.header-divider{
+    color: #eeee;
+    font-size: 0px;
+}

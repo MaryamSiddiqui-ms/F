@@ -1,0 +1,4 @@
+.card-container{
+    width: calc(100% - 300px);
+    margin-left: auto;
+}

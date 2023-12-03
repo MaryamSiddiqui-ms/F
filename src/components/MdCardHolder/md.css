@@ -1,0 +1,28 @@
+.md-card{
+    width: 80%;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin: 30px 0px;
+    background-color: #363636;
+    box-shadow: 0px 5px 15px 10px rgba(0,0,0,0.15);
+    transition: 0.3s all;
+}
+
+.md-card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.10);
+    transition: 0.3s all;
+}
+
+.md-heading{
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.md-text{
+    margin-top: 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+

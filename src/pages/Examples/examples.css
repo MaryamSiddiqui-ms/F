@@ -1,0 +1,30 @@
+.examples{
+    width: calc(100% - 256px);
+    margin-left: auto;
+}
+
+.btn-group{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.model-btn{
+    border-radius: 15px;
+    padding: 10px 25px;
+    border: 1px solid white;
+    color: white;
+    font-weight: 500;
+    font-size: 1.4rem;
+    transition: 0.3s all;
+}
+
+.model-btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: 0.3s all;
+}
