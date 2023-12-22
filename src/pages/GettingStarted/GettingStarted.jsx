@@ -11,7 +11,7 @@ const GettingStarted = () => {
       <Sidebar links={links} />
       <Header />
       <div className="main">
-        <img src={gif} alt="In Progress" width="70%" />
+        <img src={gif} alt="In Progress" width="40%" />
         <h3>Installation process will be shared soon...!</h3>
       </div>
     </div>

@@ -10,7 +10,7 @@ const Home = () => {
       <Sidebar links={links} />
       <Header />
       <div className="main">
-        <img src={gif} alt="In Progress" width="70%" />
+        <img src={gif} alt="In Progress" width="40%" />
         <h3>
           This Project is currently in Progress...
         </h3>
