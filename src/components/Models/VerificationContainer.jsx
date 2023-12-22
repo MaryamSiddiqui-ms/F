@@ -1,12 +1,23 @@
 import { useState, useEffect } from "react";
 import "./models.css";
+import axios from "axios";
 
 const VerificationContainer = ({handleSubmitVerification}) => {
   const [verified, setVerified] = useState(false);
+  const [displayMessage, setDisplayMessage] = useState('Click on "Verify"');
 
-  const handleVerification = () => {
-    setVerified(true);
-    handleSubmitVerification()
+  const handleVerification = async () => {
+    
+    const res = await axios.get("http://localhost:80/verify", {});
+    if(res.data.verification_status == "PASSED"){
+      setVerified(true);
+      handleSubmitVerification()
+      setDisplayMessage("Congratulations! Verification passed :)")
+    }
+    else{
+      setDisplayMessage("Alert, your verification failed :(")
+    }
+    
   };
 
   return (
@@ -14,7 +25,9 @@ const VerificationContainer = ({handleSubmitVerification}) => {
       <button className="proof-btn" onClick={handleVerification}>
         Verify
       </button>
-      {verified ? <p className="congrats-msg">Congrats! Verification Passed :)</p> : null}
+      <p className="congrats-msg">
+        {displayMessage}  
+      </p> 
     </div>
   );
 };

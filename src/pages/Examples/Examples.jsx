@@ -13,7 +13,6 @@ const Examples = () => {
   const [passed, setPassed] = useState(false);
 
   useEffect(() => {
-    console.log("Proof changed");
   }, [[isProof]]);
 
   const handleProof = () => {
