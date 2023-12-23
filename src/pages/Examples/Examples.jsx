@@ -28,6 +28,9 @@ const Examples = () => {
     <div>
       <Sidebar links={links} />
       <Header />
+      <div className="model-header">
+        KNN Model - Proving the inference on a diabetes classification problem
+      </div>
       <div className="examples">
         <div className={passed ? "lp-filled" : "lollipop"}>
           {isProof ? 1 : 2}
