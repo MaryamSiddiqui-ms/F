@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import "./models.css";
 import ReactMarkdown from "react-markdown";
-// import proofMd from './proof';
+import { ClipLoader } from "react-spinners";
 import axios from "axios";
+import { css } from '@emotion/react';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 const ProofContainer = ({ handleClick, handleSubmitProof }) => {
   const [isCollapse, setIsCollapse] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(-1);
   const [proofMd, setProofMd] = useState("");
   const [x1, setX1] = useState(0);
@@ -66,21 +68,26 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setIsLoading(true);
     const res = await axios.post("http://localhost:80", {
       dx: x1,
       dy: x2,
     });
 
     const proof = res.data.proof;
+
+    setIsLoading(false);
     setPrediction(res.data.prediction);
-
-    console.log("Data sent successfully!");
-
     setProofMd(convertObjectToMarkdown(proof));
-    console.log(proofMd);
+
     handleSubmitProof();
   };
+
+  const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+  `;
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
     setCopied(true);
@@ -108,6 +115,7 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
                     placeholder="Value X"
                     value={x1}
                     onChange={handleX1Change}
+                    step="0.1"
                   />
                 </div>
                 <div>
@@ -121,13 +129,22 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
                     placeholder="Value Y"
                     value={x2}
                     onChange={handleX2Change}
-                    step="0.01"
                   />
                 </div>
               </div>
               <button type="submit" className="proof-btn">
-                Generate Proof
+                {isLoading ? (
+                  <ClipLoader
+                    color={"#ffffff"}
+                    loading={isLoading}
+                    css={override}
+                    size={15}
+                  />
+                ) : (
+                  "Generate Proof"
+                )}
               </button>
+              {isLoading && <p>This might take a while...</p>}
             </form>
 
             <div className="prediction-container">
