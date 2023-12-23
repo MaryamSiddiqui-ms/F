@@ -1,0 +1,23 @@
+/* styles.module.css or global styles */
+.rounded-code-block {
+    border-radius: 10px; /* Adjust the value as needed */
+    overflow: hidden;
+    /* width: 60%; */
+    box-shadow: 0 0 20px rgba(5, 102, 25, 0.5);
+  }
+  
+  /* tutorial.css */
+.code-block-container {
+    position: relative;
+  }
+  
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa; /* Adjust the background color as needed */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+  
