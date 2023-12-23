@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div id="header">
       <h1>zkVML</h1>
-      <h2>Zero-Knowledge Validating Machine Learning Model</h2>
+      <h2>Zero-Knowledge Verifiable Machine Learning</h2>
       <hr className="header-divider" />
     </div>
   );
