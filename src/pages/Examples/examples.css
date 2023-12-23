@@ -48,3 +48,10 @@
     cursor: pointer;
     transition: 0.15s all;
 }
+
+
+.model-header{
+    padding: 50px 320px;
+    font-size: 1.8rem;
+    
+}

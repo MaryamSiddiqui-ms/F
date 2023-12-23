@@ -24,29 +24,27 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
   };
 
   function convertObjectToMarkdown(obj) {
-
     let inputs = "";
     for (let i = 0; i < obj.inputs.length; i++) {
-      inputs += '\t\t"' + obj.inputs[i] + '\",\n';
+      inputs += '\t\t"' + obj.inputs[i] + '",\n';
     }
     inputs = inputs.slice(0, -2);
 
-    
     let p_a = "";
     for (let i = 0; i < obj.proof.a.length; i++) {
-      p_a += '\t\t"' + obj.proof.a[i] + '\",\n';
+      p_a += '\t\t"' + obj.proof.a[i] + '",\n';
     }
     p_a = p_a.slice(0, -2);
-    
+
     let p_b = "";
     for (let i = 0; i < obj.proof.b.length; i++) {
-      p_b += '\t\t"' + obj.proof.b[i] + '\",\n';
+      p_b += '\t\t"' + obj.proof.b[i] + '",\n';
     }
     p_b = p_b.slice(0, -2);
-    
+
     let p_c = "";
     for (let i = 0; i < obj.proof.c.length; i++) {
-      p_c += '\t\t"' + obj.proof.c[i] + '\",\n';
+      p_c += '\t\t"' + obj.proof.c[i] + '",\n';
     }
     p_c = p_c.slice(0, -2);
 
@@ -83,52 +81,66 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
   };
 
   return (
-    <div className="proof-container">
-      {isCollapse ? (
-        <>
-          <h3 className="pub-input-title">Public Inputs</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="public-inputs">
-              <input
-                name="pub-x"
-                className="pub-input"
-                type="number"
-                placeholder="Value X"
-                value={x1}
-                onChange={handleX1Change}
-              />
-              <input
-                name="pub-y"
-                className="pub-input"
-                type="number"
-                placeholder="Value Y"
-                value={x2}
-                onChange={handleX2Change}
-              />
+    <>
+      <div className="proof-container">
+        {isCollapse ? (
+          <>
+            <h3 className="pub-input-title">Public Inputs</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="public-inputs">
+                <div>
+                  <label for="pub-x" className="label label-txt">
+                    BMI
+                  </label>
+                  <input
+                    id="pub-x"
+                    name="pub-x"
+                    className="pub-input"
+                    type="number"
+                    placeholder="Value X"
+                    value={x1}
+                    onChange={handleX1Change}
+                  />
+                </div>
+                <div>
+                  <label for="pub-x" className="label label-txt">
+                    Age
+                  </label>
+                  <input
+                    name="pub-y"
+                    className="pub-input"
+                    type="number"
+                    placeholder="Value Y"
+                    value={x2}
+                    onChange={handleX2Change}
+                  />
+                </div>
+              </div>
+              <button type="submit" className="proof-btn">
+                Generate Proof
+              </button>
+            </form>
+
+            <div className="prediction-container">
+              Outcome( Diabetes: Yes/ No ):{" "}
+              {prediction != -1 ? prediction : null}
             </div>
-            <button type="submit" className="proof-btn">
-              Generate Proof
-            </button>
-          </form>
 
-          <div className="prediction-container">
-            Prediction: {prediction != -1 ? prediction : null}
+            <i
+              className="fa-solid fa-arrow-right next-step-btn"
+              onClick={handleCollapse}
+            ></i>
+          </>
+        ) : null}
+
+        {prediction != -1 ? (
+          <div className="proof-md-wrapper">
+            <h2>Proof</h2>
+            <ReactMarkdown>{`\`\`\`bash\n${proofMd}\n\`\`\``}</ReactMarkdown>
           </div>
-
-          <i
-            className="fa-solid fa-arrow-right next-step-btn"
-            onClick={handleCollapse}
-          ></i>
-        </>
-      ) : null}
-
-      {prediction != -1 ? (
-        <div className="proof-md-wrapper">
-          <h2>Proof</h2>
-          <ReactMarkdown>{`\`\`\`bash\n${proofMd}\n\`\`\``}</ReactMarkdown>
-        </div>
-      ) : null}
-    </div>
+        ) : null}
+      </div>
+    </>
   );
 };
 
