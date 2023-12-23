@@ -1,6 +1,4 @@
 const lib_doc = `
-**Code Explanation with Proper Subheadings:**
-
 ### 1. **Imports:**
 \`\`\`python
 import sys
@@ -47,7 +45,7 @@ except Exception as e:
 ### 4. **Data Model:**
 \`\`\`python
 class Item(BaseModel):
-    dx: int
+    dx: float
     dy: int
 \`\`\`
    - Defines a Pydantic data model (\`Item\`) specifying the expected structure of the request payload, containing \`dx\` and \`dy\`.
