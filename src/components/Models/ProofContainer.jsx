@@ -113,6 +113,8 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
                     placeholder="Value Y"
                     value={x2}
                     onChange={handleX2Change}
+                    step="0.01"
+
                   />
                 </div>
               </div>
