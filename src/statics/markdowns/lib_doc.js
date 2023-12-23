@@ -116,7 +116,7 @@ def verify():
 if __name__ == "__main__":
     uvicorn.run(app, host='0.0.0.0', port=80)
 \`\`\`
-   - Runs the FastAPI application using UVicorn on host '0.0.0.0' and port 80.
+   - Runs the FastAPI application using Uvicorn on host '0.0.0.0' and port 80.
 
 ### 8. **Notes:**
    - Ensure that the necessary directories (\`zkDist\`, \`zkSort\`, \`zkMaxLabel\`, \`ProofComposition\`, \`utils\`) and related modules for zero-knowledge proofs are correctly set up.
