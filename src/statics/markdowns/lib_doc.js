@@ -25,6 +25,7 @@ try:
     sys.path.append('./utils')
 
     from minMaxNormalizationAndInteger import minMaxNormalizationAndInteger
+    from clean import clean_dirs
     from distance import zkDistance
     from sort import zkSort
     from maxLabel import zkmaxLabel
@@ -36,7 +37,14 @@ except Exception as e:
    - Attempts to import custom modules for zero-knowledge proofs (\`minMaxNormalizationAndInteger\`, \`zkDistance\`, \`zkSort\`, \`zkmaxLabel\`, \`aggregate_proofs\`).
    - If there's an exception, it prints an error message.
 
-### 3. **Data Model:**
+### 3.**Data Cleaning**
+\`\`\`python
+    clean_dirs()
+\`\`\`
+- Calls the clean_dirs function, for cleaning directories
+
+
+### 4. **Data Model:**
 \`\`\`python
 class Item(BaseModel):
     dx: int
@@ -44,7 +52,7 @@ class Item(BaseModel):
 \`\`\`
    - Defines a Pydantic data model (\`Item\`) specifying the expected structure of the request payload, containing \`dx\` and \`dy\`.
 
-### 4. **FastAPI Setup:**
+### 5. **FastAPI Setup:**
 \`\`\`python
 app = FastAPI()
 app.add_middleware(
@@ -57,7 +65,7 @@ app.add_middleware(
    - Creates a FastAPI application instance (\`app\`).
    - Adds CORS middleware to allow cross-origin requests.
 
-### 5. **Main Endpoint (\`/\`):**
+### 6. **Main Endpoint (\`/\`):**
 \`\`\`python
 @app.post("/")
 def main(req: Item):
@@ -95,7 +103,7 @@ def main(req: Item):
    - Aggregates proofs using the \`aggregate_proofs\` function.
    - Measures the execution time and returns the prediction, final proof, and execution time.
 
-### 6. **Verification Endpoint (\`/verify\`):**
+### 7. **Verification Endpoint (\`/verify\`):**
 \`\`\`python
 @app.get("/verify")
 def verify():
@@ -110,14 +118,14 @@ def verify():
    - Executes Zokrates' \`verify\` command to verify the proof using the verification key.
    - Returns the verification status.
 
-### 7. **Run the Application:**
+### 8. **Run the Application:**
 \`\`\`python
 if __name__ == "__main__":
     uvicorn.run(app, host='0.0.0.0', port=80)
 \`\`\`
    - Runs the FastAPI application using Uvicorn on host '0.0.0.0' and port 80.
 
-### 8. **Notes:**
+### **Notes:**
    - Ensure that the necessary directories (\`zkDist\`, \`zkSort\`, \`zkMaxLabel\`, \`ProofComposition\`, \`utils\`) and related modules for zero-knowledge proofs are correctly set up.
    - Handle dataset paths and configurations appropriately.
    - Security relies on the correctness of zero-knowledge proof implementations.
