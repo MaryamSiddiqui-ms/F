@@ -15,7 +15,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 \`\`\`
    - The code starts by importing the necessary libraries and modules for the FastAPI application, data manipulation, subprocess execution, and zero-knowledge proofs.
-
 ### 2. **Importing Custom Modules:**
 \`\`\`python
 try:
