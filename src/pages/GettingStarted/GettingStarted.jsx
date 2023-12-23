@@ -5,6 +5,7 @@ import gif from '../../assets/in_progress.gif'
 import './start.css';
 
 
+
 const GettingStarted = () => {
   return (
     <div>
@@ -13,7 +14,7 @@ const GettingStarted = () => {
       <div className="main">
         <img src={gif} alt="In Progress" width="40%" />
         <h3>Installation process will be shared soon...!</h3>
-      </div>
+      </div> 
     </div>
   );
 };

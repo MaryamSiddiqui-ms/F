@@ -7,7 +7,8 @@ import { Home,
   ZkDist,
   ZkSort,
   ZkMaxLabel,
-  Examples 
+  Examples,
+  Tutorial
 } from "./pages";
 
 import {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/examples",
     element: <Examples />
+  },
+  {
+    path: "/tutorial",
+    element: <Tutorial />
   },
   {
     path: "*",
