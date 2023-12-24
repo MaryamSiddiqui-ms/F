@@ -5,7 +5,6 @@
     padding: 10px 20px;
     position: relative;
     min-height: 20px;
-
     transition: 0.3s all;
 }
 
@@ -54,6 +53,9 @@
     font-weight: 700;
     color: #f3f3f3;
     margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .proof-btn{
@@ -77,7 +79,6 @@
 
 .proof-md-wrapper{
     width: 100%;
-    overflow-x: scroll;
     margin-bottom: 80px;
 }
 
@@ -101,20 +102,46 @@
     overflow: hidden;
     /* width: 60%; */
     box-shadow: 0 0 20px rgba(5, 102, 25, 0.5);
+    margin: 30px 0px;
+    /* max-height: 512px;
+    scrollbar-width: 10px; */
   }
   
   /* tutorial.css */
-.code-block-container {
+.code-block-container-pc {
     position: relative;
+    font-size: 0.8rem;
   }
   
-.copy-button {
+.copy-button-pc {
     position: absolute;
     top: 10px;
-    right: 10px;
-    background-color: #f8f9fa; /* Adjust the background color as needed */
+    right: 25px;
+    background-color: rgba(77, 77, 77, 0.75); 
+    color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
 }
+
+.copy-button-pc:focus{
+    outline: none;
+}
   
+.next-btn-wrapper{
+    width: 128px;
+    height: 64px;
+    text-align: center;
+}
+
+.next-step-btn{
+    font-size: 2.4rem;
+    color: #2BAE66;
+    transition: 0.1s all;
+}
+
+.next-step-btn:hover{
+    font-size: 2.6rem;
+    cursor: pointer;
+    transition: 0.15s all;
+}

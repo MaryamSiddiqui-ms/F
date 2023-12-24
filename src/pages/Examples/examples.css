@@ -33,22 +33,6 @@
     font-weight: 800;
 }
 
-.next-step-btn{
-    font-size: 2.4rem;
-    color: #2BAE66;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px 50px;
-    transition: 0.1s all;
-}
-
-.next-step-btn:hover{
-    font-size: 2.6rem;
-    cursor: pointer;
-    transition: 0.15s all;
-}
-
 
 .model-header{
     padding: 50px 320px;
