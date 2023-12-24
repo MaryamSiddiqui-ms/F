@@ -1,2 +1,10 @@
-.main{
+.main-home{
+    width: calc(100% - 356px);
+    margin-left: auto;
+    padding: 20px;
+}
+
+.ref-link{
+    color: #3f84e4;
+    font-weight: bold;
 }
