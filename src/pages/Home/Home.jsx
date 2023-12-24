@@ -10,10 +10,12 @@ const Home = () => {
       <Sidebar links={links} />
       <Header />
       <div className="main">
-        <img src={gif} alt="In Progress" width="40%" />
-        <h3>
-          This Project is currently in Progress...
-        </h3>
+        <h1>
+          Intro to Zero knowledge Proofs
+        </h1>
+        <p>
+          Zero knowledge proofs 
+        </p>
       </div>
     </div>
   );

@@ -144,32 +144,37 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
                   "Generate Proof"
                 )}
               </button>
-              {isLoading && <p>This might take a while...</p>}
+              {isLoading && <span>This might take a while...</span>}
             </form>
 
             <div className="prediction-container">
               Outcome( Diabetes: Yes/ No ):{" "}
               {prediction != -1 ? prediction : null}
+              <div className="next-btn-wrapper">
+                <i
+                className="fa-solid fa-arrow-right next-step-btn"
+                onClick={handleCollapse}
+              ></i>
+              </div>
             </div>
-
+{/* 
             <i
               className="fa-solid fa-arrow-right next-step-btn"
               onClick={handleCollapse}
-            ></i>
+            ></i> */}
           </>
         ) : null}
 
         {prediction != -1 ? (
           <div className="proof-md-wrapper">
             <h2>Proof</h2>
-            {/* <ReactMarkdown>{`\`\`\`json\n${proofMd}\n\`\`\``}</ReactMarkdown> */}
             <ReactMarkdown
               children={`\`\`\`json\n${proofMd}\n\`\`\``}
               components={{
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || "");
                   return !inline && match ? (
-                    <div className="code-block-container">
+                    <div className="code-block-container-pc">
                       <SyntaxHighlighter
                         className={`rounded-code-block ${className}`}
                         children={String(children).replace(/\n$/, "")}
@@ -180,7 +185,7 @@ const ProofContainer = ({ handleClick, handleSubmitProof }) => {
                         text={String(children).replace(/\n$/, "")}
                         onCopy={handleCopy}
                       >
-                        <button className="copy-button">
+                        <button className="copy-button-pc">
                           {copied ? "Copied!" : "Copy"}
                         </button>
                       </CopyToClipboard>
