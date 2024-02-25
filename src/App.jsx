@@ -7,6 +7,8 @@ import { Home,
   ZkDist,
   ZkSort,
   ZkMaxLabel,
+  ZkTreeTraversal,
+  ZkArgmax,
   Examples,
   Tutorial
 } from "./pages";
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
   {
     path: "/documentation/ZkMaxLabel",
     element: <ZkMaxLabel />
+  },
+  {
+    path: "/documentation/ZkTreeTraversal",
+    element: <ZkTreeTraversal />
+  },
+  {
+    path: "/documentation/ZkArgmax",
+    element: <ZkArgmax />
   },
   {
     path: "/getting-started",
