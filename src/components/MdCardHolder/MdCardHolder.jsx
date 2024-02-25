@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import MdCard from "./MdCard";
 
 const MdCardHolder = ({ docs }) => {
-    const [documents, setDocuemnts] = useState([]);
+    const [documents, setDocuments] = useState([]);
 
     useEffect(() => {
-        setDocuemnts(docs);
+        setDocuments(docs);
     }, [])
 
     const colors = [
@@ -18,7 +18,7 @@ const MdCardHolder = ({ docs }) => {
         <div className="card-holder">
             {
                 documents.map((document, index) =>{
-                    return <MdCard key={index} doc={document} color={colors[index]} />
+                    return <MdCard key={index} doc={document} color={colors[index%colors.length]} />
                 })
             }
         </div>

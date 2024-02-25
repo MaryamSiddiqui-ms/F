@@ -10,6 +10,14 @@ const docs = [
     {
         "title": "zkMaxLabel",
         "description": "This function finds the most frequent label in a given set of labels.  It uses the Zokrates library to validate the computation in zero-knowledge.",
+    },
+    {
+        "title": "zkTreeTraversal",
+        "description": "This function demonstrates a technique for generating zero-knowledge proofs (ZKPs) that verify the correct traversal of a decision tree without revealing the tree's structure or the input data.",
+    },
+    {
+        "title": "zkArgmax",
+        "description": "This function generates zero-knowledge proofs (ZKPs) for efficiently proving the index of the maximum value in an array, while keeping the array elements themselves confidential.",
     }
 ]
 
