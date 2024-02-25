@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import MdCard from "./MdCard";
 
 const MdCardHolder = ({ docs }) => {
-    const [documents, setDocuemnts] = useState([]);
+    const [documents, setDocuments] = useState([]);
 
     useEffect(() => {
-        setDocuemnts(docs);
+        setDocuments(docs);
     }, [])
 
     const colors = [

@@ -19,5 +19,5 @@ This function demonstrates a technique for generating zero-knowledge proofs (ZKP
  Security considerations must be taken into account when integrating with other components.
 
 ## Example Model: 
-The zkTreeTraversal function can be utilized as part of a privacy-preserving machine learning model, allowing secure predictions without revealing sensitive information. It can be integrated into various applications, such as secure data classification or [decision-making](/examples) processes.`
+The zkTreeTraversal function can be utilized as part of a privacy-preserving machine learning model, allowing secure predictions without revealing sensitive information. It can be integrated into various applications, such as secure data classification or [decision-making](/examples/DecisionTree) processes.`
 export default zkTreeTraversal;

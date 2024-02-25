@@ -40,7 +40,7 @@ This function finds the most frequent label in a given set of labels. It uses th
  - It also assumes that the Zokrates commands are correctly installed and available in the system path.
 
 ## Example Model: 
-The function can be used with the output of any labeling algorithm. Also, in various applications where label frequency analysis is required or any classification model, such as [KNN](/examples), where the most frequent label is used to classify the test point.
+The function can be used with the output of any labeling algorithm. Also, in various applications where label frequency analysis is required or any classification model, such as [KNN](/examples/KNN), where the most frequent label is used to classify the test point.
 `
 export default zkMaxLabelMd;
 

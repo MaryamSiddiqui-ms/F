@@ -10,6 +10,8 @@ import { Home,
   ZkTreeTraversal,
   ZkArgmax,
   Examples,
+  KNN,
+  DecisionTree,
   Tutorial
 } from "./pages";
 
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
   {
     path: "/examples",
     element: <Examples />
+  },
+  {
+    path: "/examples/KNN",
+    element: <KNN />
+  },
+  {
+    path: "/examples/DecisionTree",
+    element: <DecisionTree />
   },
   {
     path: "/tutorial",

@@ -25,6 +25,6 @@ This function generates zero-knowledge proofs (ZKPs) for efficiently proving the
 
 
 ## Example Model: 
-The function can be used in [CNN](/examples) and [decision trees](/examples). In these cases, the zk-SNARK could be used to prove that the model has made a specific prediction on an input without revealing the model's weights or internal computations.
+The function can be used in [CNN](/examples/CNN) and [decision trees](/examples/DecisionTree). In these cases, the zk-SNARK could be used to prove that the model has made a specific prediction on an input without revealing the model's weights or internal computations.
 `
 export default zkArgmaxMD;

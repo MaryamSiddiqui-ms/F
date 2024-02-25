@@ -39,7 +39,7 @@ This function calculates the distance between a data point and a set of data poi
 
 
 ## Example Model: 
-The function can be used as part of a [KNN classification model](/examples) , where the distance between the test point and the data points is used to classify the test point
+The function can be used as part of a [KNN classification model](/examples/KNN) , where the distance between the test point and the data points is used to classify the test point
 `
 
 export default zkDistMD;

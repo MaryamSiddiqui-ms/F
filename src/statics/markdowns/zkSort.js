@@ -39,6 +39,6 @@ This function sorts an array of data points in a DataFrame. It uses the Zokrates
 
 
 ## Example Model: 
-The function can be used as part of a [KNN classification model](/examples), as part of a sorting algorithm, where the sorted array is used to sort data points.
+The function can be used as part of a [KNN classification model](/examples/KNN), as part of a sorting algorithm, where the sorted array is used to sort data points.
 `
 export default zkSortMD;

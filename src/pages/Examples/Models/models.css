@@ -1,4 +1,4 @@
-/* .examples{
+.examples{
     width: calc(100% - 300px);
     margin-left: auto;
     padding: 20px 0px;
@@ -38,9 +38,4 @@
     padding: 50px 320px;
     font-size: 1.8rem;
     
-} */
-
-.card-container{
-    width: calc(100% - 300px);
-    margin-left: auto;
 }
