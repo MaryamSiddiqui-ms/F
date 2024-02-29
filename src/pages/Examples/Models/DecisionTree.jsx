@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import {
   Sidebar,
   Header,
-  ProofContainer,
   VerificationContainer,
 } from "../../../components";
 import links from "../../../statics/links";
+import DTProofContainer from "../../../components/Models/DecisionTree/DTProofContainer";
 import "./models.css";
 
 const DecisionTree = () => {
@@ -36,7 +36,7 @@ const DecisionTree = () => {
           {isProof ? 1 : 2}
         </div>
         {isProof ? (
-          <ProofContainer
+          <DTProofContainer
             handleClick={handleProof}
             handleSubmitProof={handlePassed}
           />
