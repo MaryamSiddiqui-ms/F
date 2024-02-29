@@ -9,6 +9,9 @@ import { Home,
   ZkMaxLabel,
   ZkTreeTraversal,
   ZkArgmax,
+  ZkConv2D,
+  ZkRelu,
+  ZkSoftmax,
   Examples,
   KNN,
   DecisionTree,
@@ -50,6 +53,18 @@ const router = createBrowserRouter([
   {
     path: "/documentation/ZkArgmax",
     element: <ZkArgmax />
+  },
+  {
+    path: "/documentation/ZkConv2D",
+    element: <ZkConv2D />
+  },
+  {
+    path: "/documentation/ZkRelu",
+    element: <ZkRelu />
+  },
+  {
+    path: "/documentation/ZkSoftmax",
+    element: <ZkSoftmax />
   },
   {
     path: "/getting-started",
