@@ -12,6 +12,8 @@ import { Home,
   ZkConv2D,
   ZkRelu,
   ZkSoftmax,
+  ZkApplyWeights,
+  ZkMaxPooling,
   Examples,
   KNN,
   DecisionTree,
@@ -65,6 +67,14 @@ const router = createBrowserRouter([
   {
     path: "/documentation/ZkSoftmax",
     element: <ZkSoftmax />
+  },
+  {
+    path: "/documentation/ZkApplyWeights",
+    element: <ZkApplyWeights />
+  },
+  {
+    path: "/documentation/ZkMaxPooling",
+    element: <ZkMaxPooling />
   },
   {
     path: "/getting-started",

@@ -12,10 +12,10 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(-1);
   const [proofMd, setProofMd] = useState("");
-  const [x1, setX1] = useState(0);
-  const [x2, setX2] = useState(0);
-  const [x3, setX3] = useState(0); 
-  const [x4, setX4] = useState(0); 
+  const [x1, setX1] = useState(5.5);
+  const [x2, setX2] = useState(4.2);
+  const [x3, setX3] = useState(1.4); 
+  const [x4, setX4] = useState(0.2); 
   const handleX1Change = (event) => {
     setX1(event.target.value);
   };

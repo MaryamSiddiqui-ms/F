@@ -9,6 +9,8 @@ export {default as ZkArgmax} from './Documentation/API/ZkArgmax';
 export {default as ZkConv2D} from './Documentation/API/ZkConv2D';
 export {default as ZkRelu} from './Documentation/API/ZkRelu';
 export {default as ZkSoftmax} from './Documentation/API/ZkSoftmax';
+export {default as ZkApplyWeights} from './Documentation/API/ZkApplyWeights';
+export {default as ZkMaxPooling} from './Documentation/API/ZkMaxPooling';
 export {default as Examples} from './Examples/Examples';
 export {default as KNN} from './Examples/Models/KNN';
 export {default as DecisionTree} from './Examples/Models/DecisionTree';
