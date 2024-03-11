@@ -4,6 +4,7 @@ import {
   Header,
   VerificationContainer,
 } from "../../../components";
+import DTProofContainer from "../../../components/Models/DecisionTree/DTProofContainer";
 import links from "../../../statics/links";
 import DTProofContainer from "../../../components/Models/DecisionTree/DTProofContainer";
 import "./models.css";

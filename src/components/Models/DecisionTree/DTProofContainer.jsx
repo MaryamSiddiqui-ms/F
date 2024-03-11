@@ -12,16 +12,19 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(-1);
   const [proofMd, setProofMd] = useState("");
+
   const [x1, setX1] = useState(5.5);
   const [x2, setX2] = useState(4.2);
   const [x3, setX3] = useState(1.4); 
   const [x4, setX4] = useState(0.2); 
+
   const handleX1Change = (event) => {
     setX1(event.target.value);
   };
   const handleX2Change = (event) => {
     setX2(event.target.value);
   };
+
   const handleX3Change = (event) => { 
     setX3(event.target.value);
  };
@@ -29,10 +32,12 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
     setX4(event.target.value);
  };
 
+
   const handleCollapse = () => {
     setIsCollapse(false);
     handleClick();
   };
+
   const getSpeciesName = (prediction) => {
     switch (prediction) {
        case "0":
@@ -45,6 +50,7 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
          return "Unknown";
     }
    };
+
 
   function convertObjectToMarkdown(obj) {
     let inputs = "";
@@ -88,11 +94,13 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
+
     const res = await axios.post("http://localhost:80/decisiontree/prove", {
       x1: x1,
       x2: x2,
       x3: x3, // Include x3 in the request
       x4: x4,
+
     });
 
     const proof = res.data.proof;
@@ -124,15 +132,18 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
             <h3 className="pub-input-title">Public Inputs</h3>
             <form onSubmit={handleSubmit}>
               <div className="public-inputs">
+
                 <div className="input-fields">
                   <label for="pub-x" className="label label-txt">
                     Sepal Length
+
                   </label>
                   <input
                     id="pub-x"
                     name="pub-x"
                     className="pub-input"
                     type="number"
+
                     placeholder="Sepal Length"
                     value={x1}
                     onChange={handleX1Change}
@@ -141,6 +152,7 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
                 </div>
                 <div>
                   <label for="pub-x" className="label label-txt">
+
                     Sepal Width
                   </label>
                   <input
@@ -182,6 +194,7 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
                     value={x4}
                     onChange={handleX4Change}
                     step="0.1"
+
                   />
                 </div>
               </div>
@@ -201,9 +214,11 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
             </form>
 
             <div className="prediction-container">
+
               Outcome( Flower: Setosa[0], Virginica[1], and Versicolor[2] ):{" "}
               {/* {prediction != -1 ? prediction : null} */}
               {prediction != -1 ? getSpeciesName(prediction) : "Not yet predicted"}
+
               <div className="next-btn-wrapper">
                 <i
                 className="fa-solid fa-arrow-right next-step-btn"
