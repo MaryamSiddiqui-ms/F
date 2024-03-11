@@ -18,7 +18,7 @@
 }
 
 .label{
-    width: 30%;
+    width: 20%;
     margin: 0px 20px;
     display: block;
 }
@@ -144,4 +144,8 @@
     font-size: 2.6rem;
     cursor: pointer;
     transition: 0.15s all;
+}
+
+.public-inputs > div > input {
+    width: 75%;
 }

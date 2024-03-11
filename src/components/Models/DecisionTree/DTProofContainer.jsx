@@ -12,8 +12,11 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(-1);
   const [proofMd, setProofMd] = useState("");
-  const [x1, setX1] = useState(0);
-  const [x2, setX2] = useState(0);
+
+  const [x1, setX1] = useState(5.5);
+  const [x2, setX2] = useState(4.2);
+  const [x3, setX3] = useState(1.4); 
+  const [x4, setX4] = useState(0.2); 
 
   const handleX1Change = (event) => {
     setX1(event.target.value);
@@ -22,10 +25,32 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
     setX2(event.target.value);
   };
 
+  const handleX3Change = (event) => { 
+    setX3(event.target.value);
+ };
+ const handleX4Change = (event) => { 
+    setX4(event.target.value);
+ };
+
+
   const handleCollapse = () => {
     setIsCollapse(false);
     handleClick();
   };
+
+  const getSpeciesName = (prediction) => {
+    switch (prediction) {
+       case "0":
+         return "Setosa";
+       case "1":
+         return "Virginica";
+       case "2":
+         return "Versicolor";
+       default:
+         return "Unknown";
+    }
+   };
+
 
   function convertObjectToMarkdown(obj) {
     let inputs = "";
@@ -69,9 +94,13 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    const res = await axios.post("http://localhost:80", {
-      dx: x1,
-      dy: x2,
+
+    const res = await axios.post("http://localhost:80/decisiontree/prove", {
+      x1: x1,
+      x2: x2,
+      x3: x3, // Include x3 in the request
+      x4: x4,
+
     });
 
     const proof = res.data.proof;
@@ -103,16 +132,19 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
             <h3 className="pub-input-title">Public Inputs</h3>
             <form onSubmit={handleSubmit}>
               <div className="public-inputs">
-                <div>
+
+                <div className="input-fields">
                   <label for="pub-x" className="label label-txt">
-                    BMI
+                    Sepal Length
+
                   </label>
                   <input
                     id="pub-x"
                     name="pub-x"
                     className="pub-input"
                     type="number"
-                    placeholder="Value X"
+
+                    placeholder="Sepal Length"
                     value={x1}
                     onChange={handleX1Change}
                     step="0.1"
@@ -120,15 +152,49 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
                 </div>
                 <div>
                   <label for="pub-x" className="label label-txt">
-                    Age
+
+                    Sepal Width
                   </label>
                   <input
-                    name="pub-y"
+                    id="pub-x"
+                    name="pub-x"
                     className="pub-input"
                     type="number"
-                    placeholder="Value Y"
+                    placeholder="Sepal Width"
                     value={x2}
                     onChange={handleX2Change}
+                    step="0.1"
+                  />
+                </div>
+                <div>
+                  <label for="pub-x" className="label label-txt">
+                    Petal Length
+                  </label>
+                  <input
+                    id="pub-x"
+                    name="pub-x"
+                    className="pub-input"
+                    type="number"
+                    placeholder="Petal Length"
+                    value={x3}
+                    onChange={handleX3Change}
+                    step="0.1"
+                  />
+                </div>
+                <div>
+                  <label for="pub-x" className="label label-txt">
+                    Petal Width
+                  </label>
+                  <input
+                    id="pub-x"
+                    name="pub-x"
+                    className="pub-input"
+                    type="number"
+                    placeholder="Petal Width"
+                    value={x4}
+                    onChange={handleX4Change}
+                    step="0.1"
+
                   />
                 </div>
               </div>
@@ -148,8 +214,11 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
             </form>
 
             <div className="prediction-container">
-              Outcome( Diabetes: Yes/ No ):{" "}
-              {prediction != -1 ? prediction : null}
+
+              Outcome( Flower: Setosa[0], Virginica[1], and Versicolor[2] ):{" "}
+              {/* {prediction != -1 ? prediction : null} */}
+              {prediction != -1 ? getSpeciesName(prediction) : "Not yet predicted"}
+
               <div className="next-btn-wrapper">
                 <i
                 className="fa-solid fa-arrow-right next-step-btn"
