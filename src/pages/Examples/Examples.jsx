@@ -63,6 +63,9 @@ const Examples = () => {
       <Sidebar links={links} />
       <Header />
         <div className="connect-btn">
+          <p className="connect-txt">
+            To run Examples it is recommeneded to connect to wallet
+          </p>
           <button className="eg-btn"><img src={metamask} alt="metamask" className="metamask" />Connect Wallet</button>
         </div>
         <div className="card-container">
