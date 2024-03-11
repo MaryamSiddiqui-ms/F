@@ -40,7 +40,31 @@
     
 } */
 
-.card-container{
+/* .card-container{
     width: calc(100% - 300px);
     margin-left: auto;
+} */
+.connect-btn {
+  margin-left: auto;
+  padding: 0 180px;
+
+}
+.eg-btn {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-weight: bold;
+  border:none;
+}
+.metamask {
+  object-fit: cover;
+  height: 6.5vh;
+  width: 3vw;
+  margin-right: 10px;
+}
+
+.eg-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px green;
+
 }
