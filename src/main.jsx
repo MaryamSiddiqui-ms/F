@@ -1,10 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { MetaMaskProvider } from "@metamask/sdk-react";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <MetaMaskProvider
+      debug={false}
+      sdkOptions={{
+        dappMetadata: {
+          name: "zkVML",
+          url: window.location.href,
+        },
+        // Other options
+      }}
+    >
+      <App />
+    </MetaMaskProvider>
+  </React.StrictMode>
+);

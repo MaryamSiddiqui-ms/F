@@ -51,9 +51,9 @@
   justify-content: space-around;
   margin-left: 100px;
   /* margin-right: 256px; */
-  padding: 0 180px;
   width: 60%;
   padding-top: 10px;
+  padding: 0px 180px;
   /* border: 1px solid white; */
 }
 .connect-txt{
@@ -72,12 +72,18 @@
 }
 .metamask {
   object-fit: cover;
-  height: 6.5vh;
-  width: 3vw;
+  height: 32px;
+  width: 32px;
   margin-right: 10px;
+  border-radius: 100%;
 }
 
 .eg-btn:hover {
   cursor: pointer;
   box-shadow: 0 0 20px green;
+}
+
+.eg-btn:focus {
+  border: none;
+  outline: none;
 }
