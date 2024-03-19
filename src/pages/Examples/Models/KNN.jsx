@@ -47,7 +47,7 @@ const KNN = () => {
             handleGetProof={getProof}
           />
         ) : (
-          <VerificationContainer handleSubmitVerification={handlePassed} proof={proof} />
+          <VerificationContainer handleSubmitVerification={handlePassed} proof={proof} model="knn" />
         )}
       </div>
     </div>

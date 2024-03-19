@@ -3,49 +3,56 @@ import "./models.css";
 import axios from "axios";
 import { ethers } from "ethers";
 
-const VerificationContainer = ({ handleSubmitVerification, proof }) => {
+const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
   const [verified, setVerified] = useState(false);
   const [displayMessage, setDisplayMessage] = useState('Click on "Verify"');
   const [provider, setProvider] = useState(null);
 
-  useEffect(() => {
-    const initializeProvider = async () => {
-      if (window.ethereum) {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        setProvider(provider);
-      }
-    };
+  // useEffect(() => {
+  //   const initializeProvider = async () => {
+  //     if (window.ethereum) {
+  //       const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //       setProvider(provider);
+  //     }
+  //   };
 
-    initializeProvider();
-  }, []);
+  //   initializeProvider();
+  // }, []);
 
-  // if(proof) {
-  //   console.log(proof.proof, proof.inputs)
-  // }
 
   const handleVerification = async () => {
-    const response = await axios.get("http://localhost:80/verify");
-    const { abi, contract_address } = response.data;
+    let modelApi = "";
+    if (model === "knn") {
+      modelApi = "zkMaxLabel";
+    }
+    else if (model === "decisiontree") {
+      modelApi = "zkArgmax"
+    }
 
-    console.log(abi)
-    console.log(contract_address)
+    const response = await axios.get(`http://localhost:80/verify?proof_path=${modelApi}`);
+    const { abi, contract_address } = response.data;
 
     if (abi.abi && contract_address && proof) {
       console.log(abi.abi, contract_address);
+      // console.log(proof.proof);
+      // console.log(proof.inputs);
 
-      // const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const contract = new ethers.Contract(contract_address, abi.abi, provider);
-
+      const provider = new ethers.providers.JsonRpcProvider('http://127.0.0.1:8545')
+      console.log(provider)
       const signer = provider.getSigner();
-      const contractWithSigner = contract.connect(signer);
-      const tx = await contractWithSigner.verifyTx(proof.proof, proof.inputs);
+      
+      const contract = new ethers.Contract(contract_address, abi.abi, signer);
+      // const contractWithSigner = contract.connect(signer);
+      const tx = await contract.verifyTx(proof.proof, proof.inputs);
 
-      const receipt = await tx.wait();
+      console.log(tx);
+      // const receipt = await tx.wait();
 
-      const verificationStatus = receipt.events?.filter(
-        (e) => e.event === "VerificationStatus"
-      )[0]?.args?.status;
+      // const verificationStatus = receipt.events?.filter(
+      //   (e) => e.event === "VerificationStatus"
+      // )[0]?.args?.status;
+
+      let verificationStatus = tx;
 
       if (verificationStatus) {
         setVerified(true);
