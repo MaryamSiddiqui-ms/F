@@ -50,22 +50,29 @@
 
 // export default Examples;
 
-import {useState, useEffect} from 'react';
-import { MdCardHolder, Sidebar, Header } from '../../components';
-import models from '../../statics/models';
-import links from '../../statics/links';
-import './Examples.css'
+import { useState, useEffect } from "react";
+import { MdCardHolder, Sidebar, Header } from "../../components";
+import models from "../../statics/models";
+import links from "../../statics/links";
+import "./examples.css";
+import metamask from '../../assets/metamask.png'
 
 const Examples = () => {
-    return (
-        <div>
-            <Sidebar links={links} />
-            <Header />
-            <div className="card-container">
-                <MdCardHolder docs={models} />
-            </div>
+  return (
+    <div>
+      <Sidebar links={links} />
+      <Header />
+        <div className="connect-btn">
+          <p className="connect-txt">
+            To run Examples it is recommeneded to connect to wallet
+          </p>
+          <button className="eg-btn"><img src={metamask} alt="metamask" className="metamask" />Connect Wallet</button>
         </div>
-    )
-}
+        <div className="card-container">
+          <MdCardHolder docs={models} />
+        </div>
+    </div>
+  );
+};
 
 export default Examples;
