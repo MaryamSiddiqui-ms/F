@@ -59,6 +59,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: top;
+  width: 80%;
 }
 
 .response-code-header {
@@ -68,4 +69,19 @@
 
 .prompt-form, .response-code-wrapper{
   width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .prompt-code-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .response-code-container{
+    width: 324px;
+  }
+
+
 }
