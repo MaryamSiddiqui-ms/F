@@ -17,7 +17,8 @@ import { Home,
   Examples,
   KNN,
   DecisionTree,
-  Tutorial
+  Tutorial,
+  Prompt
 } from "./pages";
 
 import {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
   {
     path: "/tutorial",
     element: <Tutorial />
+  },
+  {
+    path: "/prompt",
+    element: <Prompt />
   },
   {
     path: "*",

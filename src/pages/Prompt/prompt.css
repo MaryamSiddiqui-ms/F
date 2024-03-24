@@ -1,0 +1,71 @@
+.prompt-heading {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.main-prompt {
+  width: calc(100% - 356px);
+  margin-left: auto;
+  padding: 20px;
+}
+
+.prompt-textarea {
+  border-radius: 7px;
+  padding: 10px 15px;
+  background: transparent;
+  color: white;
+  border: 2px solid gray;
+  margin-top: 24px;
+}
+
+.prompt-textarea:focus {
+  outline: none;
+}
+
+.prompt-label {
+  font-size: 1.8rem;
+  margin: 5px auto;
+}
+
+.response-code-container {
+  padding: 7px 15px;
+  max-width: 624px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.response-code-container::-webkit-scrollbar {
+  width: 6px;
+  height: 32px;
+}
+
+.response-code-container::-webkit-scrollbar-thumb {
+  background-color: rgb(40 42 54);
+}
+
+.response-code-container::-webkit-scrollbar-track {
+  background-color: rgb(77, 83, 118);
+  border-radius: 6px;
+  width: 3px;
+}
+
+.response-code-container::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background-color: rgb(30, 32, 40);
+}
+
+.prompt-code-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: top;
+}
+
+.response-code-header {
+  font-size: 1.8rem;
+  margin: 5px;
+}
+
+.prompt-form, .response-code-wrapper{
+  width: 100%;
+}
