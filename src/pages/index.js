@@ -14,4 +14,5 @@ export {default as ZkMaxPooling} from './Documentation/API/ZkMaxPooling';
 export {default as Examples} from './Examples/Examples';
 export {default as KNN} from './Examples/Models/KNN';
 export {default as DecisionTree} from './Examples/Models/DecisionTree';
+export {default as CNN} from './Examples/Models/CNN';
 export {default as Tutorial} from './Tutorial/Tutorial';
