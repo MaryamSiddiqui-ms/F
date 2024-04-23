@@ -54,7 +54,7 @@ import {useState, useEffect} from 'react';
 import { MdCardHolder, Sidebar, Header } from '../../components';
 import models from '../../statics/models';
 import links from '../../statics/links';
-import './Examples.css'
+import './examples.css'
 
 const Examples = () => {
     return (
