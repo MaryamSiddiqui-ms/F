@@ -19,17 +19,17 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
   //   initializeProvider();
   // }, []);
 
-
   const handleVerification = async () => {
     let modelApi = "";
     if (model === "knn") {
       modelApi = "zkMaxLabel";
-    }
-    else if (model === "decisiontree") {
-      modelApi = "zkArgmax"
+    } else if (model === "decisiontree") {
+      modelApi = "zkArgmax";
     }
 
-    const response = await axios.get(`http://localhost:80/verify?proof_path=${modelApi}`);
+    const response = await axios.get(
+      `http://localhost:80/verify?proof_path=${modelApi}`
+    );
     const { abi, contract_address } = response.data;
 
     if (abi.abi && contract_address && proof) {
@@ -37,13 +37,25 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
       // console.log(proof.proof);
       // console.log(proof.inputs);
 
-      const provider = new ethers.providers.JsonRpcProvider('http://127.0.0.1:8545')
-      console.log(provider)
+      const provider = new ethers.providers.JsonRpcProvider(
+        "http://127.0.0.1:8545"
+      );
+      console.log(provider);
       const signer = provider.getSigner();
-      
+
       const contract = new ethers.Contract(contract_address, abi.abi, signer);
-      // const contractWithSigner = contract.connect(signer);
+      // const contractWithSigner = contract.connect(signer);const startTime = performance.now();
+
+      // Execute the command
       const tx = await contract.verifyTx(proof.proof, proof.inputs);
+
+      // End measuring time
+      const endTime = performance.now();
+
+      // Calculate the execution time in milliseconds
+      const executionTime = endTime - startTime;
+
+      console.log(`Execution time: ${executionTime} milliseconds`);
 
       console.log(tx);
       // const receipt = await tx.wait();
