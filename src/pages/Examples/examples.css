@@ -40,7 +40,44 @@
     
 } */
 
-.card-container{
+/* .card-container{
     width: calc(100% - 300px);
     margin-left: auto;
+} */
+.connect-btn {
+  display: flex;
+  align-items: center;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  margin-left: 100px;
+  /* margin-right: 256px; */
+  padding: 0 180px;
+  width: 60%;
+  padding-top: 10px;
+  /* border: 1px solid white; */
+}
+.connect-txt{
+    font-weight: lighter;
+    font-size: large;
+    padding-left: auto;
+    /* border: 1px solid white; */
+
+}
+.eg-btn {
+  display: flex;
+  align-items: center;
+  /* margin-left: auto; */
+  font-weight: bold;
+  border: none;
+}
+.metamask {
+  object-fit: cover;
+  height: 6.5vh;
+  width: 3vw;
+  margin-right: 10px;
+}
+
+.eg-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px green;
 }

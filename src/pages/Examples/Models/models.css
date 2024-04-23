@@ -1,41 +1,61 @@
-.examples{
-    width: calc(100% - 300px);
-    margin-left: auto;
-    padding: 20px 0px;
+.examples {
+  width: calc(100% - 300px);
+  margin-left: auto;
+  padding: 20px 0px;
 }
 
-.lollipop{
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 1.4rem;
-    box-shadow: 0px 0px 10px 2px #2BAE66;
-    color: white;
-    font-weight: 800;
+.lollipop {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  box-shadow: 0px 0px 10px 2px #2bae66;
+  color: white;
+  font-weight: 800;
 }
 
-.lp-filled{
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 1.4rem;
-    box-shadow: 0px 0px 10px 2px #2BAE66;
-    background-color: #2BAE66;
-    color: white;
-    font-weight: 800;
+.lp-filled {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  box-shadow: 0px 0px 10px 2px #2bae66;
+  background-color: #2bae66;
+  color: white;
+  font-weight: 800;
 }
 
+.model-header {
+  padding: 50px 320px;
+  font-size: 1.8rem;
+}
 
-.model-header{
-    padding: 50px 320px;
-    font-size: 1.8rem;
-    
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  grid-gap: 4px; 
+  /* border: 1px white solid; */
+  margin-left: 300px;
+}
+
+.mnist-img {
+/* Maintain aspect ratio */
+  cursor: pointer; /* Make the cursor a pointer when hovering over images */
+  object-fit: cover;
+  object-position: center; /* Centers the image within the container */
+  /* border: 1px white solid; */
+  background: white;
+  transition: transform 0.3s ease-in-out;
+}
+.mnist-img:hover{
+    background: rgb(39, 167, 77);
+    transform: scale(1.1);
 }
