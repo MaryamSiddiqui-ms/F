@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import CopyToClipboard from "react-copy-to-clipboard";
 
-const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
+const DTProofContainer = ({ handleClick, handleSubmitProof, handleGetProof }) => {
   const [isCollapse, setIsCollapse] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(-1);
@@ -98,12 +98,13 @@ const DTProofContainer = ({ handleClick, handleSubmitProof }) => {
     const res = await axios.post("http://localhost:80/decisiontree/prove", {
       x1: x1,
       x2: x2,
-      x3: x3, // Include x3 in the request
+      x3: x3, 
       x4: x4,
 
     });
 
     const proof = res.data.proof;
+    handleGetProof(proof)
 
     setIsLoading(false);
     setPrediction(res.data.prediction);

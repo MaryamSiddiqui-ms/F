@@ -51,26 +51,46 @@
 // export default Examples;
 
 import { useState, useEffect } from "react";
+import { useSDK } from "@metamask/sdk-react";
 import { MdCardHolder, Sidebar, Header } from "../../components";
 import models from "../../statics/models";
 import links from "../../statics/links";
 import "./examples.css";
-import metamask from '../../assets/metamask.png'
+import metamask from "../../assets/metamask.png";
 
 const Examples = () => {
+  const [account, setAccount] = useState();
+  const { sdk, connected, connecting, provider, chainId } = useSDK();
+
+  const connect = async () => {
+    try {
+      const accounts = await sdk?.connect();
+      setAccount(accounts?.[0]);
+    } catch (err) {
+      console.warn("failed to connect..", err);
+    }
+  };
+
   return (
     <div>
       <Sidebar links={links} />
       <Header />
-        <div className="connect-btn">
-          <p className="connect-txt">
-            To run Examples it is recommeneded to connect to wallet
-          </p>
-          <button className="eg-btn"><img src={metamask} alt="metamask" className="metamask" />Connect Wallet</button>
-        </div>
-        <div className="card-container">
-          <MdCardHolder docs={models} />
-        </div>
+      <div className="connect-btn">
+        <p className="connect-txt">
+          To run Examples it is recommeneded to connect to wallet
+        </p>
+        {account ? (
+          <p>{`Connected! Account Address: ${account}`}</p>
+        ) : (
+          <button className="eg-btn" onClick={connect}>
+            <img src={metamask} alt="metamask" className="metamask" />
+            Connect Wallet
+          </button>
+        )}
+      </div>
+      <div className="card-container">
+        <MdCardHolder docs={models} />
+      </div>
     </div>
   );
 };

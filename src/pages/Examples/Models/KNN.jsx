@@ -11,6 +11,7 @@ import "./models.css";
 const KNN = () => {
   const [isProof, setIsProof] = useState(true);
   const [passed, setPassed] = useState(false);
+  const [proof, setProof] = useState(null);
 
   useEffect(() => {
   }, [[isProof]]);
@@ -23,6 +24,10 @@ const KNN = () => {
   const handlePassed = () => {
     setPassed(true);
   };
+
+  const getProof = (obj) => {
+    setProof(obj);
+  }
 
   return (
     <div>
@@ -39,9 +44,10 @@ const KNN = () => {
           <ProofContainer
             handleClick={handleProof}
             handleSubmitProof={handlePassed}
+            handleGetProof={getProof}
           />
         ) : (
-          <VerificationContainer handleSubmitVerification={handlePassed} />
+          <VerificationContainer handleSubmitVerification={handlePassed} proof={proof} model="knn" />
         )}
       </div>
     </div>
