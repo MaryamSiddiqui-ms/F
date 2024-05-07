@@ -13,7 +13,7 @@ const Prompt = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://localhost:80/prompt-generation", {
+    const res = await axios.post("https://zkvml.azurewebsites.net/", {
       inputCode: inputCode,
     });
     console.log(res?.data.response);
