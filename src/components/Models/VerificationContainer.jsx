@@ -47,6 +47,8 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
       // const contractWithSigner = contract.connect(signer);const startTime = performance.now();
 
       // Execute the command
+      
+      const startTime = performance.now();
       const tx = await contract.verifyTx(proof.proof, proof.inputs);
 
       // End measuring time
