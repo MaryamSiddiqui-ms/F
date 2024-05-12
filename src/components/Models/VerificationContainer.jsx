@@ -7,6 +7,7 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
   const [verified, setVerified] = useState(false);
   const [displayMessage, setDisplayMessage] = useState('Click on "Verify"');
   const [provider, setProvider] = useState(null);
+  const [executionTime, setExecutiontime] = useState(0);
 
   // useEffect(() => {
   //   const initializeProvider = async () => {
@@ -55,11 +56,12 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
       const endTime = performance.now();
 
       // Calculate the execution time in milliseconds
-      const executionTime = endTime - startTime;
+      const execTime = endTime - startTime;
 
       console.log(`Execution time: ${executionTime} milliseconds`);
 
       console.log(tx);
+      setExecutiontime(execTime)
       // const receipt = await tx.wait();
 
       // const verificationStatus = receipt.events?.filter(
@@ -84,6 +86,11 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
         Verify
       </button>
       <p className="congrats-msg">{displayMessage}</p>
+      { verified &&
+        <p>
+          On-chain Verification Time: {executionTime} milliseconds
+        </p>
+      }
     </div>
   );
 };
