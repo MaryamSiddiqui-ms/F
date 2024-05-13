@@ -19,7 +19,8 @@ import { Home,
   DecisionTree,
   CNN,
   Tutorial,
-  Prompt
+  Prompt,
+  ResearchPaper
 } from "./pages";
 
 import {
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <Home />
+  }
+  , {
+    path: "/research-paper",
+    element: <ResearchPaper />
   }
 
 ]);
