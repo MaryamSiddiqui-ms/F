@@ -13,6 +13,7 @@ import axios from "axios";
 const CNN = () => {
   const [isProof, setIsProof] = useState(true);
   const [passed, setPassed] = useState(false);
+  const [proof, setProof] = useState(null)
 
   useEffect(() => {}, [[isProof]]);
 
@@ -24,6 +25,10 @@ const CNN = () => {
   const handlePassed = () => {
     setPassed(true);
   };
+
+  const getProof = (obj) => {
+    setProof(obj);
+  }
   // const [images, setImages] = useState([]);
 
   // useEffect(() => {
@@ -88,9 +93,10 @@ const CNN = () => {
           <CNNProofContainer
             handleClick={handleProof}
             handleSubmitProof={handlePassed}
+            handleGetProof={getProof}
           />
         ) : (
-          <VerificationContainer handleSubmitVerification={handlePassed} />
+          <VerificationContainer handleSubmitVerification={handlePassed} proof={proof} model="cnn" />
         )}
       </div>
     </div>

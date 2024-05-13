@@ -7,7 +7,7 @@ import { css } from "@emotion/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import CopyToClipboard from "react-copy-to-clipboard";
 
-const CNNProofContainer = ({ handleClick, handleSubmitProof }) => {
+const CNNProofContainer = ({ handleClick, handleSubmitProof, handleGetProof }) => {
   const [isCollapse, setIsCollapse] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(-1);
@@ -119,18 +119,16 @@ const CNNProofContainer = ({ handleClick, handleSubmitProof }) => {
 
     const res = await axios.post("http://localhost:80/CNN/prove", {
       // input_image: JSON.stringify(inputImage),
-      input_image:inputImage
-
+      input_image: inputImage,
     });
- console.log(res.data);
-
-    
+    console.log(res.data);
 
     const proof = res.data.proof;
+    handleGetProof(proof)
 
     setIsLoading(false);
     setPrediction(res.data.prediction);
-    // setProofMd(convertObjectToMarkdown(proof));
+    setProofMd(convertObjectToMarkdown(proof));
 
     handleSubmitProof();
   };

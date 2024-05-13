@@ -80,7 +80,6 @@ const ProofContainer = ({ handleClick, handleSubmitProof, handleGetProof }) => {
     setIsLoading(false);
     setPrediction(res.data.prediction);
     setProofMd(convertObjectToMarkdown(proof));
-
     handleSubmitProof();
   };
 

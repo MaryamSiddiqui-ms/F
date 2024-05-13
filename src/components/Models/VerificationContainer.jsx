@@ -24,9 +24,9 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
     let modelApi = "";
     if (model === "knn") {
       modelApi = "zkMaxLabel";
-    } else if (model === "decisiontree") {
+    } else if (model === "decisiontree" || model === "cnn") {
       modelApi = "zkArgmax";
-    }
+    } 
 
     const response = await axios.get(
       `http://localhost:80/verify?proof_path=${modelApi}`
@@ -35,8 +35,6 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
 
     if (abi.abi && contract_address && proof) {
       console.log(abi.abi, contract_address);
-      // console.log(proof.proof);
-      // console.log(proof.inputs);
 
       const provider = new ethers.providers.JsonRpcProvider(
         "http://127.0.0.1:8545"
@@ -45,29 +43,17 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
       const signer = provider.getSigner();
 
       const contract = new ethers.Contract(contract_address, abi.abi, signer);
-      // const contractWithSigner = contract.connect(signer);const startTime = performance.now();
-
-      // Execute the command
       
       const startTime = performance.now();
       const tx = await contract.verifyTx(proof.proof, proof.inputs);
 
-      // End measuring time
       const endTime = performance.now();
-
-      // Calculate the execution time in milliseconds
       const execTime = endTime - startTime;
 
       console.log(`Execution time: ${executionTime} milliseconds`);
 
       console.log(tx);
       setExecutiontime(execTime)
-      // const receipt = await tx.wait();
-
-      // const verificationStatus = receipt.events?.filter(
-      //   (e) => e.event === "VerificationStatus"
-      // )[0]?.args?.status;
-
       let verificationStatus = tx;
 
       if (verificationStatus) {
