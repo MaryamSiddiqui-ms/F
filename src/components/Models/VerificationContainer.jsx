@@ -32,6 +32,8 @@ const VerificationContainer = ({ handleSubmitVerification, proof, model }) => {
       `http://localhost:80/verify?proof_path=${modelApi}`
     );
     const { abi, contract_address } = response.data;
+    console.log(response.data)
+    console.log(proof)
 
     if (abi.abi && contract_address && proof) {
       console.log(abi.abi, contract_address);

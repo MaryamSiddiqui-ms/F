@@ -1,0 +1,28 @@
+.inst-list-wrapper{
+    text-align: start;
+    color: white;
+    margin-left: 300px;
+}
+
+.inst-heading{
+    font-size: 1.4rem;
+}
+
+.zok-doc-link{
+    color: rgb(176, 176, 255);
+}
+
+.code-block{
+    width: fit-content;
+    padding: 15px 50px;
+    border-radius: 20px;
+    margin-left: 20px;
+    color: rgb(231, 120, 207);
+    background-color: black;
+}
+
+.inst-ending-txt{
+    margin-top: 50px;
+    margin-left: 300px;
+    text-align: center;
+}
