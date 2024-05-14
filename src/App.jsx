@@ -20,7 +20,8 @@ import { Home,
   CNN,
   Tutorial,
   Prompt,
-  ResearchPaper
+  ResearchPaper,
+  ContactUsPage
 } from "./pages";
 
 import {
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
   {
     path: "/prompt",
     element: <Prompt />
+  },
+  {
+    path: "/contact",
+    element: <ContactUsPage />
   },
   {
     path: "*",
