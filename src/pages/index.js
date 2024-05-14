@@ -18,3 +18,4 @@ export {default as CNN} from './Examples/Models/CNN';
 export {default as Tutorial} from './Tutorial/Tutorial';
 export {default as Prompt} from './Prompt/Prompt';
 export {default as ResearchPaper} from './ResearchPaper/ResearchPaper';
+export {default as ContactUsPage} from './ContactUsPage/ContactUsPage';

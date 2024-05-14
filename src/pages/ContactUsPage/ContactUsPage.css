@@ -1,0 +1,26 @@
+.contact-us-page {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.founders {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.founder {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.address {
+  margin-top: 20px;
+}
+
+.email-link{
+    color: rgb(112, 174, 245);
+}
