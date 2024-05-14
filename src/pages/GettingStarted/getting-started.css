@@ -1,6 +1,7 @@
 .inst-list-wrapper{
     text-align: start;
     color: white;
+    margin-left: 300px;
 }
 
 .inst-heading{
@@ -22,5 +23,6 @@
 
 .inst-ending-txt{
     margin-top: 50px;
-    text-align: center;
+    text-align: start;
+    margin-left: 340px;
 }
