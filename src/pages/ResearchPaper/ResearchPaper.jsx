@@ -11,7 +11,7 @@ const ResearchPaper = () => {
     <div>
       <Sidebar links={links} />
       <Header />
-      <div className="main">
+      <div className="main-r">
         <img className="icon"src={rp} alt="In Progress"/>
         <h3>Abstract</h3>
         <p>
