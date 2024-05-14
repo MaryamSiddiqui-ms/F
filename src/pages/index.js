@@ -17,3 +17,4 @@ export {default as DecisionTree} from './Examples/Models/DecisionTree';
 export {default as CNN} from './Examples/Models/CNN';
 export {default as Tutorial} from './Tutorial/Tutorial';
 export {default as Prompt} from './Prompt/Prompt';
+export {default as ResearchPaper} from './ResearchPaper/ResearchPaper';
