@@ -33,11 +33,11 @@ const docs = [
     },
     {
         "title": "zkSoftmax",
-        "description": "The function ensures that the output values are in the range (0, 1) and sum up to 1, making them suitable for classification problems where the output represents the probability of each class.",
+        "description": "It generates proofs to ensure that output values lie within a specified range and sum up to 1, crucial for classification tasks where outputs represent class probabilities.",
     },
     {
         "title": "zkMaxPooling",
-        "description": "The function is designed to generate zero-knowledge proofs (ZKPs) for the operation of max pooling in a neural network, which is a technique used to downsample input by taking the maximum value in a region. ",
+        "description": "This function generates proofs for the max pooling operation in neural networks, crucial for downsampling input data while maintaining privacy.",
     },
    
 ]
