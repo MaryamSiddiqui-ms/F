@@ -19,7 +19,7 @@ const CNNProofContainer = ({ handleClick, handleSubmitProof, handleGetProof }) =
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:80/CNN/mnist")
+      .get("https://zkvml.azurewebsites.net/CNN/mnist")
       .then((res) => {
         setImages(res.data);
         setOriginalData(res.data); // Store original data
