@@ -54,7 +54,7 @@ const GettingStarted = () => {
           </li>
         </ol>
         <p className="inst-ending-txt">
-          Following the above steps, you can now use zkVML.<br/> Enjoy!
+          Following the above steps, you can now use zkVML. Enjoy!
         </p>
       </div>
     </div>
